@@ -65,6 +65,9 @@ void solve()
 
 int main()
 {
+    clock_t start, end;
+    start = clock();
+
     #ifndef ONLINE_JUDGE
     freopen("input.txt", "r", stdin);
     freopen("output.txt", "w", stdout);
@@ -75,6 +78,11 @@ int main()
     cout.tie(NULL);
 
     solve();
+
+    end = clock();
+    double time_taken = double(end - start) / double(CLOCKS_PER_SEC);
+    cerr << "Time taken by program is : " << fixed 
+         << time_taken << setprecision(5) << " sec " << endl;
 
     return 0;
 }
